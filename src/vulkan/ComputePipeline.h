@@ -11,6 +11,11 @@ public:
                     const std::vector<VkPushConstantRange>& pushConstantRanges = {});
     ~ComputePipeline();
 
+    ComputePipeline(const ComputePipeline&) = delete;
+    ComputePipeline& operator=(const ComputePipeline&) = delete;
+    ComputePipeline(ComputePipeline&&) = delete;
+    ComputePipeline& operator=(ComputePipeline&&) = delete;
+
     VkPipeline getPipeline() const { return _pipeline; }
     VkPipelineLayout getPipelineLayout() const { return _pipelineLayout; }
 
